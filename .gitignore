@@ -311,4 +311,19 @@ deepcard.db
 
 # Project specific
 *.key
+
+# ===== TS monorepo / Cloudflare Workers / Vite (deepcard-v2 底座) =====
+.wrangler/
+.dev.vars
+.env.local
+.env.local.*
+pnpm-debug.log*
+generated/openapi.json
+coverage/
+
+# ===== 多特性并行开发 (scripts/wt.sh) =====
+.worktrees/
+.wt-ports
+.wt-api.log
+.wt-web.log
 API_KEYS.md

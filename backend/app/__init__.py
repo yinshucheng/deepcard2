@@ -1,3 +1,0 @@
-"""
-DeepCard Backend Application.
-"""

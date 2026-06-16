@@ -1,0 +1,14 @@
+name = "deepcard-api"
+main = "src/entry/worker.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+DEV_MODE = "true"
+DEV_USER_EMAIL = "dev@deepcard.app"
+
+# Secrets (set via `wrangler secret put`):
+# SUPABASE_URL
+# SUPABASE_ANON_KEY
+# SUPABASE_SERVICE_ROLE_KEY
+# DATABASE_URL

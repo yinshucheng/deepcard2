@@ -54,13 +54,13 @@ cp .env.example .env
 ```bash
 cd backend
 source .venv/bin/activate
-uvicorn app.main:app --host 0.0.0.0 --port 8000
+uvicorn app.main:app --host 0.0.0.0 --port 7001
 ```
 
 **预期结果**:
-- 服务器在 http://localhost:8000 启动
+- 服务器在 http://localhost:7001 启动
 - 无错误信息
-- 显示 "Uvicorn running on http://0.0.0.0:8000"
+- 显示 "Uvicorn running on http://0.0.0.0:7001"
 
 **验收标准**: ✅ 服务器成功启动
 
@@ -80,7 +80,7 @@ source .venv/bin/activate && python -c "from app.main import app; print('✅ Fas
 **步骤**:
 ```bash
 # 在新终端中执行
-curl -X GET "http://localhost:8000/health"
+curl -X GET "http://localhost:7001/health"
 ```
 
 **预期结果**:
@@ -109,7 +109,7 @@ source .venv/bin/activate && python -m pytest tests/test_happy_path.py::TestHapp
 
 **步骤**:
 ```bash
-curl -X GET "http://localhost:8000/docs"
+curl -X GET "http://localhost:7001/docs"
 ```
 
 **预期结果**: HTML页面，显示Swagger UI界面
@@ -131,7 +131,7 @@ source .venv/bin/activate && python -m pytest tests/test_happy_path.py::TestHapp
 
 **步骤**:
 ```bash
-curl -X GET "http://localhost:8000/api/v1/llm/providers"
+curl -X GET "http://localhost:7001/api/v1/llm/providers"
 ```
 
 **预期结果**:
@@ -176,7 +176,7 @@ source .venv/bin/activate && python -m pytest tests/test_happy_path.py::TestHapp
 
 **步骤**:
 ```bash
-curl -X POST "http://localhost:8000/api/v1/llm/test" \
+curl -X POST "http://localhost:7001/api/v1/llm/test" \
 -H "Content-Type: application/json" \
 -d '{"provider": "openai", "api_key": "test-key"}'
 ```
@@ -206,7 +206,7 @@ curl -X POST "http://localhost:8000/api/v1/llm/test" \
 
 **步骤**:
 ```bash
-curl -X POST "http://localhost:8000/api/v1/llm/generate" \
+curl -X POST "http://localhost:7001/api/v1/llm/generate" \
 -H "Content-Type: application/json" \
 -d '{
   "provider": "openai",
@@ -267,7 +267,7 @@ tests/test_happy_path.py::TestHappyPath::test_root_endpoint_happy_path PASSED [1
 
 **步骤**:
 ```bash
-curl -X POST "http://localhost:8000/api/v1/llm/test" \
+curl -X POST "http://localhost:7001/api/v1/llm/test" \
 -H "Content-Type: application/json" \
 -d '{"provider": "openai", "api_key": "your-actual-openai-key"}'
 ```
@@ -287,7 +287,7 @@ curl -X POST "http://localhost:8000/api/v1/llm/test" \
 
 **步骤**:
 ```bash
-curl -X POST "http://localhost:8000/api/v1/llm/generate" \
+curl -X POST "http://localhost:7001/api/v1/llm/generate" \
 -H "Content-Type: application/json" \
 -d '{
   "provider": "openai",

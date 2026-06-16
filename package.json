@@ -1,0 +1,20 @@
+{
+  "name": "deepcard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent-first AI 闪卡应用",
+  "scripts": {
+    "dev": "pnpm --filter @deepcard/api dev & pnpm --filter @deepcard/web dev",
+    "dev:api": "pnpm --filter @deepcard/api dev",
+    "dev:web": "pnpm --filter @deepcard/web dev",
+    "build": "pnpm --filter @deepcard/api build && pnpm --filter @deepcard/web build",
+    "test": "pnpm --filter @deepcard/api test",
+    "test:watch": "pnpm --filter @deepcard/api test:watch",
+    "lint": "pnpm -r lint",
+    "db:generate": "pnpm --filter @deepcard/api db:generate",
+    "db:push": "pnpm --filter @deepcard/api db:push",
+    "db:migrate": "pnpm --filter @deepcard/api db:migrate",
+    "db:studio": "pnpm --filter @deepcard/api db:studio"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

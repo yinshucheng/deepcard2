@@ -183,7 +183,7 @@ cd deepcard2
 
 # 3. 访问应用
 # 前端: http://localhost:3000
-# API文档: http://localhost:8000/docs
+# API文档: http://localhost:7001/docs
 ```
 
 ### 本地开发

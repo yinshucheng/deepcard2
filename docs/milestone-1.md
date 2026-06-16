@@ -128,7 +128,7 @@ POST /api/v1/llm/generate               # 基础文本生成
 
 ## ✅ 验收标准
 
-- [ ] 后端API在8000端口正常启动
+- [ ] 后端API在7001端口正常启动
 - [ ] 健康检查API返回正确响应
 - [ ] 支持至少2个LLM厂商（OpenAI + DeepSeek）
 - [ ] LLM连通性测试正常工作
