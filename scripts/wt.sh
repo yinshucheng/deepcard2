@@ -70,7 +70,7 @@ current_wt_root() {
 resolve_root() {
   local slug="${1:-}"
   if [[ -n "$slug" ]]; then
-    [[ -d "$WT_DIR/$slug" ]] || die "worktree 不存在: ${slug}（先 wt.sh new $slug）"
+    [[ -d "$WT_DIR/$slug" ]] || die "worktree 不存在: ${slug}（先 wt.sh new ${slug}）"
     echo "$WT_DIR/$slug"
   else
     local r; r="$(current_wt_root)"
@@ -128,14 +128,14 @@ _create_worktree() {
 
   local pair; pair="$(next_ports)"
   echo "$pair" > "$WT_DIR/$slug/.wt-ports"
-  echo "→ 分配端口对: api/web = $pair（已写入 .wt-ports）"
+  echo "→ 分配端口对: api/web = ${pair}（已写入 .wt-ports）"
 
   # 拷贝 worktree 专属 .dev.vars（含真实凭证，gitignore）：从主目录拷，DEV_USER_EMAIL 改成隔离值
   if [[ -f "$MAIN_ROOT/packages/api/.dev.vars" ]]; then
     local dev_email="dev+${slug}@deepcard.app"
     grep -v '^DEV_USER_EMAIL=' "$MAIN_ROOT/packages/api/.dev.vars" > "$WT_DIR/$slug/packages/api/.dev.vars"
     echo "DEV_USER_EMAIL=$dev_email" >> "$WT_DIR/$slug/packages/api/.dev.vars"
-    echo "→ 拷贝 .dev.vars（DEV_USER_EMAIL=$dev_email，数据按用户隔离）"
+    echo "→ 拷贝 .dev.vars（DEV_USER_EMAIL=${dev_email}，数据按用户隔离）"
   else
     echo "⚠ 主目录 packages/api/.dev.vars 不存在，worktree 内需自行配置 env"
   fi
